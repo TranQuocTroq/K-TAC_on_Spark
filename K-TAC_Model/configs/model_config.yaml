@@ -1,0 +1,60 @@
+# configs/model_config.yaml
+
+# --- Cài đặt chung ---
+run_name: "Focus_Full_Experiment_Run"
+seed: 42
+device: "cuda"
+num_workers: 0
+
+# --- Đường dẫn GỐC (Dựa trên cấu trúc thư mục của bạn) ---
+manifest_base_dir: "data/manifest/"
+processed_data_dir: "processed_data/"
+
+# --- Cài đặt Tên thư mục (Bên trong processed_data) ---
+split_base_dir: "splits" 
+dataset_base_dir: "datasets"
+prompt_base_dir: "text_prompt"
+
+# --- DANH SÁCH THỰC NGHIỆM ĐỂ CHẠY ---
+# main_train.py sẽ lặp qua từng mục trong danh sách này
+experiments_to_run:
+  
+  # === Thực nghiệm 1: UBC_OCEAN (5 Lớp) ===
+  - dataset_name: "UBC_OCEAN" # Đã sửa lỗi thành gạch dưới (_) để khớp với folder
+    manifest_file: "labels.csv" # Sẽ tìm ở: data/manifest/UBC_OCEAN/labels.csv
+    prompts_file: "UBC-OCEAN_two_scale_text_prompt.csv" # Sẽ tìm ở: processed_data/text_prompt/UBC_OCEAN_two_scale_text_prompt.csv
+    num_classes: 5
+    settings: ["4shot","8shot","16shot"] # Lặp qua các folder này
+
+  # === Thực nghiệm 2: CAMELYON (2 Lớp) ===
+  - dataset_name: "CAMELYON"
+    manifest_file: "labels.csv" # (Đảm bảo file này tồn tại)
+    prompts_file: "CAMELYON_two_scale_text_prompt.csv" # (Đảm bảo file này tồn tại)
+    num_classes: 2
+    settings: ["4shot", "8shot", "16shot"]  
+  
+
+# --- Cài đặt Mô hình (Dùng chung cho tất cả) ---
+model:
+  image_feature_dim: 2048
+  text_encoder_name: "vinai/phobert-base" 
+  max_text_length: 128
+  projection_dim: 256 
+  kavtc:
+    compression_ratio: 0.8
+    max_tokens: 2048
+  aggregator:
+    num_heads: 4
+    dropout: 0.1
+  head_dropout: 0.25
+
+# --- Cài đặt Huấn luyện (Dùng chung cho tất cả) ---
+training:
+
+  epochs: 1
+  batch_size: 4 
+  optimizer: "AdamW"
+  learning_rate: 0.00002
+  weight_decay: 0.01
+  loss_function: "CrossEntropyLoss"
+  early_stopping_patience: 20
