@@ -1,0 +1,40 @@
+# File .gitignore
+
+# Bỏ qua các file hệ thống
+.DS_Store
+__pycache__/
+*.pyc
+
+# Bỏ qua các môi trường ảo
+.venv/
+venv/
+env/
+
+# Bỏ qua các file cài đặt của IDE
+.vscode/
+.idea/
+
+# === PHẦN QUAN TRỌNG CHO NHÓM ===
+
+# 1. Bỏ qua DỮ LIỆU THÔ
+# (Giả sử dữ liệu thô quá lớn để đưa lên Git)
+data/raw/
+
+# 2. Bỏ qua DỮ LIỆU ĐÃ XỬ LÝ
+# (Đây là thư mục giao tiếp, không nên đưa lên Git)
+processed_data/
+
+# 3. Bỏ qua Model đã huấn luyện
+checkpoints/
+
+# 4. Bỏ qua file Log và kết quả
+logs/
+
+# 5. Bỏ qua các file dữ liệu lớn (phòng trường hợp)
+*.h5
+*.pt
+*.svs
+*.tif
+
+# Giữ lại các file .gitkeep (để giữ cấu trúc thư mục rỗng)
+!*/.gitkeep
