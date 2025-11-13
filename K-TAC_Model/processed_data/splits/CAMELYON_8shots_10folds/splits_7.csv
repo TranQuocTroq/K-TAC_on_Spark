@@ -1,0 +1,17 @@
+idx,train,val,test
+0,patient_020_node_4_bag,patient_017_node_4_bag,patient_015_node_1_bag
+1,patient_064_node_0_bag,patient_024_node_1_bag,patient_015_node_2_bag
+2,patient_012_node_0_bag,patient_044_node_4_bag,patient_068_node_1_bag
+3,patient_080_node_1_bag,patient_096_node_0_bag,patient_039_node_1_bag
+4,patient_041_node_0_bag,,patient_045_node_1_bag
+5,patient_088_node_1_bag,,patient_042_node_3_bag
+6,patient_099_node_4_bag,,
+7,patient_016_node_1_bag,,
+8,patient_004_node_4_bag,,
+9,patient_061_node_4_bag,,
+10,patient_034_node_3_bag,,
+11,patient_017_node_2_bag,,
+12,patient_021_node_3_bag,,
+13,patient_046_node_3_bag,,
+14,patient_075_node_4_bag,,
+15,patient_073_node_1_bag,,

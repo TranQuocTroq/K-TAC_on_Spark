@@ -1,0 +1,49 @@
+# =======================================================
+# GENERAL IGNORES: System, Environment, and Python Cache
+# =======================================================
+.DS_Store
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# =======================================================
+# PROJECT IGNORES: Data, Models, and Large Files
+# =======================================================
+
+# 1. Models and Logs (Output Directories)
+checkpoints/
+logs/
+
+# 2. Large Data Files and Intermediate Outputs
+*.zip
+*.tar
+*.gz
+*.h5
+*.pt
+*.pth
+*.svs
+*.tif
+
+# 3. Directories Containing Large Data
+# (Ensures all raw data and processed features are skipped)
+data/raw/
+processed_data/datasets/
+
+# 4. Explicitly Exclude Sensitive/Large Small Files
+# (Ex: Labels that are small but sensitive/not needed for training setup)
+data/**/labels.csv
+
+# =======================================================
+# EXCEPTIONS (Must be tracked by Git)
+# =======================================================
+
+# EXCEPTION 1: Keep all Split and Text Prompt files (small and necessary for setup)
+!processed_data/splits/
+!processed_data/text_prompt/
+
+# EXCEPTION 2: Keep structure for empty directories
+!*/.gitkeep

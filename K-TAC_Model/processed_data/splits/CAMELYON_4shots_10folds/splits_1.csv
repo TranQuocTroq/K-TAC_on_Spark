@@ -1,0 +1,9 @@
+idx,train,val,test
+0,patient_099_node_4_bag,patient_038_node_2_bag,patient_052_node_1_bag
+1,patient_075_node_4_bag,patient_081_node_4_bag,patient_072_node_0_bag
+2,patient_088_node_1_bag,patient_044_node_4_bag,patient_046_node_3_bag
+3,patient_024_node_2_bag,patient_042_node_3_bag,patient_010_node_4_bag
+4,patient_067_node_4_bag,,patient_017_node_2_bag
+5,patient_068_node_1_bag,,patient_021_node_3_bag
+6,patient_015_node_1_bag,,
+7,patient_012_node_0_bag,,
