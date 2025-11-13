@@ -16,21 +16,21 @@ env/
 
 # === PHẦN QUAN TRỌNG CHO NHÓM ===
 
-# 1. Bỏ qua DỮ LIỆU THÔ
-# (Giả sử dữ liệu thô quá lớn để đưa lên Git)
+# 1. Bỏ qua DỮ LIỆU LỚN
+# Chỉ chặn các thư mục chứa dữ liệu lớn (DỮ LIỆU THÔ và ĐÃ XỬ LÝ)
+
 data/raw/
-
-# 2. Bỏ qua DỮ LIỆU ĐÃ XỬ LÝ
-# (Đây là thư mục giao tiếp, không nên đưa lên Git)
+data/manifests/
+data/
 processed_data/
+processed_data/datasets/
 
-# 3. Bỏ qua Model đã huấn luyện
+
+# 2. Bỏ qua Model đã huấn luyện, Log và kết quả
 checkpoints/
-
-# 4. Bỏ qua file Log và kết quả
 logs/
 
-# 5. Bỏ qua các file dữ liệu lớn (phòng trường hợp)
+# 3. Bỏ qua các file dữ liệu lớn (phòng trường hợp)
 *.h5
 *.pt
 *.svs
